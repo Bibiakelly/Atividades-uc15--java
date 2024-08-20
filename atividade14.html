@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruta</title>
+
+        
+       
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto";
+        }
+
+        body {
+            background-color: #a8d8ff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 650px;
+            height: 450px;
+            display: block;
+        }
+
+        .displays {
+            display: flex;
+            height: 25%;
+            background-color: #60b8ff;
+            border-radius: 10px;
+        }
+
+        .imgFruta {
+            height: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #60b8ff;
+            border-radius: 10px;
+        }
+
+        .imgFruta img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .display {
+            width: 45%;
+            height: 75%;
+            margin: auto;
+            background-color: #165b94;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function escreverPagina(nomePortugues, nomeIngles, nomeImagem) {
+            document.body.innerHTML = `
+                <main>
+                    <div class="displays">
+                        <div class="display">${nomePortugues}</div>
+                        <div class="display">${nomeIngles}</div>
+                    </div>
+                    <div class="imgFruta">
+                        <img src="${nomeImagem}" alt="${nomePortugues}">
+                    </div>
+                </main>
+            `;
+        }
+
+        function traduzirFruta(fruta) {
+            const frutas = {
+                "abacaxi": { ingles: "Pineapple", imagem: "https://amoplantar.com.br/wp-content/uploads/2020/12/como-plantar-abacaxi-aprenda-como-plantar-a-fruta-em-casa-3.jpg" },
+                "banana": { ingles: "Banana", imagem: "https://parade.com/.image/t_share/MTkyNTIwNTg2NzMwMTUzNTA4/how-to-keep-bananas-fresh.jpg" },
+                "maçã": { ingles: "Apple", imagem: "https://conteudo.imguol.com.br/c/entretenimento/6d/2023/01/27/close-up-de-vermelho-maca-royal-gala-1674849210580_v2_900x506.jpg" },
+                "mamão": { ingles: "Papaya", imagem: "https://dicademusculacao.com.br/wp-content/uploads/2017/07/mam%C3%A3o.jpg" },
+                "melancia": { ingles: "Watermelon", imagem: "https://www.mundoecologia.com.br/wp-content/uploads/2019/06/Melancia-3-2.jpg" },
+                "morango": { ingles: "Strawberry", imagem: "https://cdn.vidaativa.pt/uploads/2020/01/intolerancia-a-histamina-morangos.jpg" }
+            };
+
+            return frutas[fruta] || null;
+        }
+
+        let fruta = prompt("Digite o nome de uma fruta").toLowerCase();
+        const frutaTraduzida = traduzirFruta(fruta);
+
+        if (frutaTraduzida) {
+            escreverPagina(fruta, frutaTraduzida.ingles, frutaTraduzida.imagem);
+        } else {
+            document.body.innerHTML = `
+                <main>
+                    <div class="displays">
+                        <div class="display">ERRO</div>
+                        <div class="display">ERRO</div>
+                    </div>
+                    <div class="imgFruta">
+                        Fruta não encontrada. Procure erros de digitação ou tente outra fruta.
+                    </div>
+                </main>
+            `;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação Etária</title>
+</head>
+<body>
+    <script>
+        
+        function main() {
+            
+            var idade = parseInt(prompt("Digite a sua idade:"));
+            
+            
+            if (isNaN(idade)) {
+                alert("Por favor, digite uma idade válida.");
+                return;
+            }
+
+            
+            var classificacao;
+
+           
+            if (idade < 12) {
+                classificacao = "Criança";
+            } else if (idade < 18) {
+                classificacao = "Adolescente";
+            } else if (idade < 60) {
+                classificacao = "Adulto";
+            } else {
+                classificacao = "Idoso";
+            }
+
+            
+            console.log("Classificação Etária");
+            console.log("Idade:\t" + idade);
+            console.log("Classificação:\t" + classificacao);
+
+            
+            var resultadoDiv = document.createElement('div');
+            resultadoDiv.innerHTML = `
+                <h2>Classificação Etária</h2>
+                <p>Idade: ${idade}</p>
+                <p>Classificação: ${classificacao}</p>
+            `;
+            document.body.appendChild(resultadoDiv);
+        }
+
+        main();
+    </script>
+</body>
+</html>

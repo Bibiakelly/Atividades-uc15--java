@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f2f5;
+        }
+
+        .form-container {
+            display: flex; 
+            gap: 20px; 
+            max-width: 1200px; 
+            width: 100%;
+            padding: 20px;
+        }
+
+        .form-wrapper {
+            width: 360px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .label {
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            height: 45px;
+            padding: 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        button {
+            height: 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .profile-pic-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-pic-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+            object-fit: cover;
+        }
+
+        .profile-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottomOpts {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btnCancelar, .btnEsqueceu {
+            background-color: #f0f2f5;
+            border: 1px solid #ccc;
+            color: #333;
+        }
+
+        .btnCancelar:hover, .btnEsqueceu:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+       
+        <div class="form-wrapper">
+            <h1>Cadastro</h1>
+            <form>
+                <div class="label">
+                    <label for="nome">Nome:</label>
+                </div>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                
+                <div class="label">
+                    <label for="email">E-mail:</label>
+                </div>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+           
+                <div class="label">
+                    <label for="senha">Senha:</label>
+                </div>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+               
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <
+        <div class="form-wrapper">
+            <h1>Login</h1>
+            <div class="profile-pic-wrapper">
+               
+                <div class="profile-icon">
+                    <span>👤</span> 
+                </div>
+            </div>
+            <form action="">
+                <div class="label"><label for="usuario">Usuário:</label></div>
+                <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required pattern="[a-zA-Z0-9_]{5,20}">
+
+                <div class="label"><label for="senhaLogin">Senha:</label></div>
+                <input type="password" id="senhaLogin" name="senhaLogin" placeholder="Digite sua senha" required minlength="6">
+
+                <button type="submit">Login</button>
+                
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
